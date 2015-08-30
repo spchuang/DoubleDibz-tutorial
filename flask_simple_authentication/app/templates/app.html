@@ -1,0 +1,91 @@
+{% extends "layouts/header.html" %}
+{% set page_title = 'DoubleDibz' %}
+
+{% block meta %}
+<!-- put meta tags here !-->
+<meta name="csrf-token" content="{{ csrf_token() }}">
+{% endblock %}
+
+{% block css_style %}
+<!-- Put css here !-->
+<link rel="stylesheet" href="/static/desktop/vendors/bootstrap-3.3.5-dist/css/bootstrap.css">
+{% endblock %}
+
+{% block main_body %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        DoubleDibz
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+   <!-- Logged out view !-->
+   <div id='logged-out-view' class='well hidden'>
+      <h3> Know the secret? Login now.</h3>
+      <form id='login-form'>
+         <div class="form-group">
+            <label>Username</label>
+            <input name='login' class="form-control">
+         </div>
+         <div class="form-group">
+            <label>Password</label>
+            <input name='password' type="password" class="form-control">
+         </div>
+         <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+   </div>
+   
+   <!-- Logged in view !-->
+   <div id='logged-in-view' class='well hidden'>
+      <h3> Welcome, <span></span>!</h3>
+      <button type="button" class="btn btn-success">I'm done. Log me out</button>
+
+   </div>
+   
+   <hr> 
+   
+   <div id='signup-view' class='well'>
+      <h3> Sign up a new user!</h3>
+      <form id='signup-form'>
+         <div class="form-group">
+            <label>Username</label>
+            <input name='user_name' class="form-control">
+         </div>
+         <div class="form-group">
+            <label>first name</label>
+            <input name='first_name' class="form-control">
+         </div>
+         <div class="form-group">
+            <label>last name</label>
+            <input name='last_name' class="form-control">
+         </div>
+         <div class="form-group">
+            <label>Email</label>
+            <input name='email' class="form-control">
+         </div>
+         <div class="form-group">
+            <label>Password</label>
+            <input name='password' type="password" class="form-control">
+         </div>
+         <div class="form-group">
+            <label>Confirm</label>
+            <input name='confirm' type="password" class="form-control">
+         </div>
+         <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+   </div>
+</div>
+
+{% endblock %}
+
+{% block js_btm %}
+<!-- Put javascript here !-->
+
+   <script src="/static/desktop/vendors/jquery.js"></script>
+   <script src="/static/desktop/js/main.js"></script>
+   
+{% endblock %}

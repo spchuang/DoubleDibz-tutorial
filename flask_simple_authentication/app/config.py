@@ -21,6 +21,8 @@ class DefaultConfig(BaseConfig):
    # Statement for enabling the development environment
    DEBUG = True
 
+   SQLALCHEMY_DATABASE_URI = "sqlite:////tmp/test.db"
+   
    # Secret key for signing cookies
    SECRET_KEY = 'development key'
 
