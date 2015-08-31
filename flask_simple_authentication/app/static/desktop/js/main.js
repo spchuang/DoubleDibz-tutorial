@@ -56,7 +56,7 @@ $(document).ready(function(){
 });
 
 // helpers
-function updateAuth() {
+function updateAuthStatus() {
    verifyAuth()
       .done(function(response){
          showLoggedIn(response.data.user_name)

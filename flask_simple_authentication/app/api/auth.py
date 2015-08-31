@@ -42,7 +42,7 @@ def login():
 @auth.route('/logout', methods=['POST'])
 @login_required
 def logout():
-   """ logout user, remove facebook login session """
+   """ logout user """
    session.pop('login', None)
    logout_user()
    return Response.make_success_resp(msg="You have successfully logged out")
