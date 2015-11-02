@@ -1,0 +1,22 @@
+{{#unless is_selling}}
+   <div class="sold-tag ribbon ribbon-red"><span>Sold Out</span></div>
+{{/unless}}
+{{#if has_images}}
+
+   <div class="post-item-image-view">
+      <img src="">
+      <a href="#" class="image_control image_next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a href="#" class="image_control image_prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+   </div>
+   <div class="row thumbnail-list">
+   {{#each images}}
+      <div class="col-xs-2">
+         <a  href="#" class="thumbnail-list-item">
+            <img id='{{@index}}' src="{{this.thumbnail}}">
+         </a>
+      </div>
+   {{/each}}
+   </div>
+{{else}}
+   <p>No images</p>
+{{/if}}

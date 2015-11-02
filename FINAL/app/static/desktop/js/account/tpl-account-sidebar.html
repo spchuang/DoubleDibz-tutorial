@@ -1,0 +1,14 @@
+<div class="settings-side-wrap" >
+   <h3>My Account</h3>
+   <div class="settings-nav">
+      
+      <a href="/settings/account" id='posts-link' >Posts</a>
+      <!--<a href="/settings/emails" id='wishlist-link' class="list-group-item">Wish List</a>!-->
+      <a href="/settings/groups" id='bookmarks-link'>Bookmarks</a>
+      <a href="/messages" id='messages-link'>Messages</a>
+      <a href="/settings/profile" id='settings-link'>Settings</a>
+      {{#unless is_canvas}}
+         <a href="/settings/help" id='help-link' >Help</a>
+      {{/unless}}
+   </div>
+</div>

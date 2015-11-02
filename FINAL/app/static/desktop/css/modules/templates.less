@@ -1,0 +1,78 @@
+.timeago{
+   cursor: pointer;
+}
+
+.user-wrap-with-picture{
+   height: 45px;
+   .user-pic{
+      width:45px;
+      height:45px;
+      float: left;
+   }
+   
+   .user-name{
+      line-height: 45px;
+      margin-left: 10px;
+      font-size: 16px;
+      font-weight: bold;
+   }
+}
+.user-wrap{
+   .user-name{
+      font-weight: bold;
+   }
+}
+
+.verify-email-modal{
+   text-align: center;
+   @media (min-width: @screen-xs-min) {
+      width: 450px;
+   }
+   
+}
+
+// ribbon
+.ribbon{
+   width: 85px;
+   height: 88px;
+   overflow: hidden;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 70;
+   span {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+      -moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+      box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+      display: block;
+      position: relative;
+      padding: 8px 0;
+      left: -29px;
+      top: 15px;
+      width: 120px;
+      font: 14px Lato,sans-serif;
+      font-weight: 700;
+      text-align: center;
+      text-shadow: rgba(0,0,0,0.3) 0px -1px 0px;
+   }
+}
+
+
+@ribbon-red: @red-link-color;
+@ribbon-to-red: #9d261d;
+.ribbon-red span {
+   background-color: @ribbon-red;
+   background-image: -moz-linear-gradient(top, @ribbon-red, @ribbon-to-red);
+   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@ribbon-red), to(@ribbon-to-red));
+   background-image: -webkit-linear-gradient(top, @ribbon-red, @ribbon-to-red);
+   background-image: -o-linear-gradient(top, @ribbon-red, @ribbon-to-red);
+   background-image: linear-gradient(to bottom, @ribbon-red, @ribbon-to-red);
+   background-repeat: repeat-x;
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFC83025', endColorstr='#FF9D261D', GradientType=0);
+   color: #fff;
+}

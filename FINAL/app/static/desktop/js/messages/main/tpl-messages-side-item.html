@@ -1,0 +1,23 @@
+
+   <div class="media">
+   <span class="pull-left" href="#">
+      <img class="item-image media-object" src="{{image.thumbnail}}" alt="...">
+   </span>
+   <div class="media-body">
+   <h5 class="item-name media-heading">
+      {{#if deleted}} 
+         <span style="text-decoration: line-through;">{{post_name}}</span>
+      {{else}}
+         {{post_name}}
+      {{/if}}
+  
+      {{#if has_unread}}
+         <small>({{unread_count}})</small>
+      {{/if}} 
+   
+   </h5>
+   <div class='item-time-wrap'>
+      <small><span class='item-time'></span></small>
+   </div>
+   </div>
+   </div>

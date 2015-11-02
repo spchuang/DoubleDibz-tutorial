@@ -1,0 +1,369 @@
+/*
+   Overwrite specific styles for home page
+*/
+#home-page-wrap{
+   position:relative;
+}
+
+body.on-home-page{
+   overflow-x: hidden;
+   
+   #header-region{
+      padding-top: 0 !important;
+   }
+   
+   #app-content >.container{
+      width:100% !important;
+      padding: 0 !important;
+   }
+   
+   .content-wrap{
+      padding: 0 !important;
+   }
+}
+
+
+/*
+   Navbar changes
+*/
+
+
+.on-home-page .navbar{
+   -webkit-transition: all .3s;
+   -moz-transition: all .3s;
+   transition: all .3s;
+}
+
+@media(min-width:@screen-sm-min) { 
+   .on-home-page .navbar{
+      background-color: rgba(0,0,0,0);
+      padding: 15px 0;
+   }
+}
+
+.on-home-page .navbar #nav-search{
+   display:none;
+   opacity: 0;
+   -webkit-transition: all .4s;
+   -moz-transition: all .4s;
+   transition: all .4s;
+}
+
+.home-navbar-show .navbar{
+   background-color: @header-bg;
+   padding: 7px 0;
+   
+   #nav-search{
+      display: block;   
+      opacity: 1 ;
+   }
+}
+
+
+
+/*
+   Home page styles
+*/ 
+
+.on-home-page #main-region .btn-xl {
+   padding: 10px 20px;
+   border-color: #fed136;
+   border-radius: 3px;
+   text-transform: uppercase;
+   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+   font-size: 18px;
+   font-weight: 700;
+   color: #fff;
+   background-color: #b44252;
+}
+
+
+.on-home-page #main-region .btn:hover{
+   background-color: #9c3140;
+}
+
+
+header {
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url('/static/img/header-bg.jpg');
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    position:relative;
+}
+header .overlay{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   background: rgba(0,0,0,0.3);
+   z-index: 10;
+}
+
+header .intro-text {
+    padding-top: 140px;
+    padding-bottom: 50px;
+}
+
+header .container{
+   z-index:100;
+   position: relative;
+}
+
+header .intro-text .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+}
+
+header .intro-text .intro-search {
+   margin-bottom: 25px;
+   text-transform: uppercase;
+   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+   height: 70px;
+   font-weight: 700;
+   font-size: 28px;
+   left: 0;
+   position: relative;
+   top: 0;
+   width: 95%;
+   max-width: 1100px;
+   margin: 0 auto;
+   z-index: 2;
+   color: #fff;
+   position: relative;
+   
+}
+
+
+header #home-search{
+   background: none;
+   border: none;
+   height: 100%;
+   outline: none;
+   background: rgba(0,0,0,0.5);
+   width: 100%;
+   padding: 0 0 0 60px;
+   
+      -webkit-transition: background-color 0.3s linear;
+   -moz-transition: background-color 0.3s linear;
+   -o-transition: background-color 0.3s linear;
+   -ms-transition: background-color 0.3s linear;
+   transition: background-color 0.3s linear;
+}
+
+header .focus #home-search{
+   background: rgba(0,0,0,0.8) !important;
+}
+
+
+@media(min-width:768px) {
+    header .intro-text {
+        padding-top: 190px;
+        padding-bottom: 250px;
+    }
+
+   header .intro-text .intro-lead-in {
+      margin-bottom: 25px;
+      font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 50px;
+      font-style: italic;
+      line-height: 40px;
+   }
+
+   header .intro-text .intro-search {
+      margin-bottom: 50px;
+      
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 75px;
+      height: 110px;
+   }
+   
+   header #home-search{
+      padding: 0 0 0 120px;
+   }
+   
+}
+
+
+
+header .search-wrap{
+   position: relative;
+   height:100%;
+   font-weight: 400;
+   -webkit-font-smoothing: antialiased;
+   text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+
+header .search-icon{
+   position: absolute;
+   height: 50px;
+   line-height: 50px;
+   top: 50%;
+   left: 18px;
+   font-size: 23px;
+   margin-top: -25px;
+}
+
+header .search-icon:hover{
+   cursor: pointer;
+}
+
+header .search-typed{
+   position: absolute;
+   height:100%;
+   width: 100%;
+   text-align: left;
+   left: 0;
+   padding-left: 60px;
+   bottom: 0;
+   font-size: 22px;
+}
+
+header .search-typed:hover{
+   cursor:text;
+}
+
+header .search-typed .typed-element{
+   line-height: 70px;
+}
+
+@media(min-width:420px) { 
+   header .search-typed{
+      font-size: inherit;
+   }
+}
+
+@media(min-width:768px) { 
+   header .search-icon{
+      left: 45px;
+      font-size: 30px;
+   }
+   header .search-typed{
+      padding-left: 120px;
+      font-size: inherit;
+   }
+   header .search-typed .typed-element{
+      line-height:110px;
+   }
+   
+}
+
+
+
+/*
+   Intro buttons
+*/
+
+.on-home-page  .intro-btns{
+   padding-top: 50px;
+   
+}
+header .intro-btns .btn{
+   width: 200px;
+   margin: 7px 13px;
+}
+
+/*
+   About Section
+*/
+section {
+    padding: 0;
+    
+    .section-header{
+      width:100%;
+      height: 270px;
+      padding-top: 120px;
+   }
+   .section-content{
+      padding: 50px 0;
+   }
+   
+   h2.section-heading {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 60px;
+      color: #000000;
+   }
+}
+
+section#about .section-header{
+   background-color: #1ac9b3;
+}
+
+@media(min-width:768px) {
+   section#about{
+      .section-header{
+         padding: 100px 0;
+      }
+      .section-content{
+         padding: 150px 0 170px 0;
+         
+         p{
+             font-size: 18px !important;
+         }
+      }
+      
+   } 
+}
+
+
+/*
+   X-factor lol
+*/
+
+section#x-factor{
+   .section-header{
+      text-align: center;
+      color: #fff;
+      background-attachment: scroll;
+      background-image: url('/static/img/header-factor-bg.jpg');
+      background-position: center center;
+      background-repeat: none;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;
+      position:relative;
+      padding: 200px 0;
+   }
+   
+   .section-content{
+      padding: 30px 0;
+      >div {
+         @media(min-width:@screen-xs-min) { 
+            padding: 0 80px;
+         }
+         @media(min-width:@screen-sm-min) { 
+            padding: 0 10px;
+         }
+         @media(min-width:@screen-md-min) { 
+            padding: 0 30px;
+         }
+         @media(min-width:@screen-lg-min) { 
+            padding: 0 100px;
+         }
+      }
+   }
+} 
+
+@media(min-width:768px) {
+   section#x-factor{
+      .section-header{
+         height: 400px;
+      }
+      .section-content{
+         padding: 50px 0;
+         p{
+            font-size: 15px!important;
+         }
+      }
+   } 
+}

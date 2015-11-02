@@ -1,0 +1,16 @@
+<div>
+   <p class='message-title'>
+      <b>
+      {{#if is_owner}}
+         You:
+      {{else}}
+         {{name}}
+      {{/if}}
+      </b>
+      <small><span class="timeago-region"></span></small>
+   </p>
+   <div class='message-bubble'>
+      {{body}}
+   </div>
+
+</div>

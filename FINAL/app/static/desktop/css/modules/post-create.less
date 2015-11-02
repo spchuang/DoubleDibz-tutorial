@@ -1,0 +1,298 @@
+.bootstrap-tagsinput.focus{
+ border-color: @brand-secondary;
+ outline: 0;
+ box-shadow: none;
+ transition: border .25s linear, color .25s linear, background-color .25s linear;
+}
+
+#create-post-form,
+#edit-post-form,
+#create-buy-request-form,
+#edit-buy-request-form{
+   .bootstrap-tagsinput{
+      width: 100%;
+      min-height: 34px;
+      font-size: 14px;
+      
+      .tag{
+         font-size: 12px;
+         font-stye: normal;
+         display: inherit !important;
+      }
+      .tt-input{
+         width:7em !important;
+      }
+   }
+   input#input-price{
+      border-radius: 6px;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+   }
+}
+.has-error .bootstrap-tagsinput{
+   border-color: #a94442;
+}
+/* 
+ * Upload Manager
+ */
+ 
+
+.upload-manager{
+   border: 1px solid #CCCCCC;
+   border-radius: 4px;
+   background-color: white;
+   text-align: left;
+   padding: 9px 14px;
+   .no-data{
+      font-size: 14px;
+   }
+   .message.error {
+       color: #BD362F;
+   }
+   .message.done {
+       color: #57ba48;
+   }
+   footer {
+      background: #F4F4F4;
+      border-top: 1px solid #DDDDDD;
+      padding: 10px;
+   }
+   .col{
+      padding-left:10px;
+      padding-right:10px;
+   }
+   .upload-manager-file{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      min-height: 120px;
+      position: relative;
+      &.is-primary{
+         .file-img img{
+            border: 7px  @orange solid;
+         }
+         .is-primary-label{
+            display:inherit;
+            color: white;
+            background: @orange;
+            z-index: 5;
+            top: 13px;
+            font-size: 13px;
+            left: 0px;
+            position: absolute;
+            padding: 0 10px!important;
+         }
+         .btn-set-primary{
+            display:none;
+         }
+      }
+      .is-primary-label{
+         display:none;
+      }
+      .file-img img{
+         border: 7px  white solid;
+         width: 100%;
+         margin: 0 auto;
+         display: block;
+         background-color: white;
+         -webkit-border-radius: 6px;
+         -moz-border-radius: 6px;
+         border-radius:6px;
+      }
+      .img-loader{
+         width: 36px;
+         height:36px;
+         position: absolute;
+         left: 50%;
+         margin-left:-18px;
+         top:50%;
+         margin-top:-18px;
+      }
+      .upload-process{
+         padding: 0 15px;
+         width: 100%;
+         position: absolute;
+         overflow:hidden;
+         bottom: 15px;
+         
+         .progress{
+            margin-bottom: 0;
+            margin-top:20px;
+         }
+      }
+      &:hover{
+         .file-img img{
+            opacity:0.9;
+         }
+         .control-buttons{
+            opacity: 1;
+         }
+      }
+      .control-buttons{
+         opacity: 0;
+         position: absolute;
+         width: 24px;
+         height: 24px;
+         text-align: center;
+         -webkit-border-radius: 3px;
+         -moz-border-radius: 3px;
+         border-radius: 3px;
+         span{
+            line-height: 24px;
+            height: 24px;
+         }
+      }
+      .btn-set-primary{
+         right: 40px;
+         &:hover{
+            color: @link-hover-color;
+         }
+      }
+      .btn-cancel,
+      .btn-clear{
+         right: 10px;
+         &:hover{
+            color: @alizarin;
+         }
+      }
+      a{
+         top: 10px;
+         color: #888;
+         background-color: rgba(37, 37, 37, 0.8);
+         color: white;
+         &:hover{
+            background-color: white;
+         }
+      }
+      //normally hide img-loader and uplaod-process
+      .img-loader,
+      .upload-process,
+      .btn-cancel{
+         display:none;
+      }
+   }
+   .upload-manager-file.uploading{ 
+      background: rgba(0, 0, 0, 0.03);
+      border: 2px dashed #bbb;
+      .img-loader,
+      .upload-process,
+      .btn-cancel{
+         display:inherit;
+      }
+      .btn-clear,
+      .btn-set-primary{
+         display:none;
+      }
+   }
+   
+   .fileinput-button {
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+      height: 115px;
+      width: 140px;
+      line-height: 115px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.03);
+      border: 2px dashed #bbb;
+      color: #888;
+      display: block;
+      margin:10px;
+      text-align: center;
+      .glyphicon{
+         font-size: 25px;
+      }
+      input {
+         position: absolute;
+         top: 0;
+         right: 0;
+         margin: 0;
+         opacity: 0;
+         -ms-filter: 'alpha(opacity=0)';
+         font-size: 200px;
+         direction: ltr;
+         cursor: pointer;
+      }
+      &:hover{
+         border-color:#888;
+         color:#5e5e5e;
+         text-shadow:none;
+      }
+   }
+
+   
+}
+
+
+
+.twitter-typeahead .tt-query,
+.twitter-typeahead .tt-hint {
+  margin-bottom: 0;
+}
+
+.twitter-typeahead .tt-hint
+{
+    display: none;
+}
+
+.tt-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+.tt-suggestion > p {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: nowrap;
+}
+.tt-suggestion > p:hover,
+.tt-suggestion > p:focus,
+.tt-suggestion.tt-cursor p {
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  outline: 0;
+  background-color: #428bca;
+}
+
+.create-new {
+   cursor: pointer;
+   position: relative;
+   padding: 0;
+   height: 115px;
+   width: 140px;
+   line-height: 115px;
+   border-radius: 6px;
+   background: rgba(0, 0, 0, 0.03);
+   border: 2px dashed #bbb;
+   color: #888;
+   display: block;
+   margin:10px;
+   text-align: center;
+   .glyphicon{
+      font-size: 25px;
+   }
+   &:hover{
+      border-color:#888;
+      color:#5e5e5e;
+      text-shadow:none;
+   }
+}

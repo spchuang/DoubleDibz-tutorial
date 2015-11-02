@@ -1,0 +1,25 @@
+<div class="row user-page-header">
+   <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 panel panel-default">
+     <div class="panel-body">
+        <div class = "row">
+           <div class="col-sm-4">
+              <img src="{{user.picture}}" alt="user image" class="img-circle myposts-user-picture">
+           </div>
+           <div class="col-sm-8">
+              <h3>{{user.user_name}}</h3>
+              <span class="edit-profile-link btn btn-primary">Edit Profile</span>
+           </div>
+        </div>
+     </div>
+   </div>
+</div>
+<div class="row">
+   Total of <span class="num-posts" class="badge"></span> Posts
+   <div class="btn-group btn-group-lg pull-right">
+      <button type="button" class="btn btn-primary post-tabs" data-tab-type="sell">Selling</button> 
+      <button type="button" class="btn btn-primary post-tabs" data-tab-type="buy" >Wishlist</button>
+   </div>
+</div>
+
+<hr>
+<div class="post-wrap"></div>

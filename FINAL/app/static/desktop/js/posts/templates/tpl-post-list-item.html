@@ -1,0 +1,49 @@
+<div class="post-list-item-padding">
+<div class='post-list-item-wrap'>
+
+   {{#if_eq src 'fb'}}
+   <div class="post-list-item fb-post" data-content="{{description}}">
+      <a class="post-list-item-img-wrap" href="https://www.facebook.com/{{feed_id}}" >
+         <img class='list-item-img' data-src="{{images.0.link}}">
+         
+      </a>
+      <a href="#" class="post-list-item-control list-item-prev"><span class="fui-arrow-left"></span></a>
+      <a href="#" class="post-list-item-control list-item-next"><span class="fui-arrow-right"></span></a>
+      <!--<a href="#" class="post-list-item-control list-item-bookmark"><span class="glyphicon glyphicon-star"></span></a>!-->
+   </div>   
+   <div class="post-description">
+      <div class="item-source">
+         <a href="https://www.facebook.com/{{feed_id}}" data-bypass target="_blank"><span class="fui-facebook"></span> View on Facebook</a>
+      </div>
+      <div class='item-price'>{{showPrice price}}</div>  
+   </div>
+   {{else}}
+   <div class="post-list-item normal-post" data-content="{{description}}">
+      {{#unless is_selling}}
+         <div class="ribbon ribbon-red"><span>Sold Out</span></div>
+      {{/unless}}
+   
+      <a class="post-list-item-img-wrap" href="/posts/{{id}}">
+         {{#if images.0.link}}
+            <img class='list-item-img' data-src="{{images.0.thumbnail}}">
+         {{else}}
+            <img class='list-item-img' data-src="/static/img/thumb.svg">
+         {{/if}}
+        
+         <!--<div class='hover-mask hover-mask-animate'></div>!-->
+      </a>
+      <a href="#" class="post-list-item-control list-item-prev"><span class="fui-arrow-left"></span></a>
+      <a href="#" class="post-list-item-control list-item-next"><span class="fui-arrow-right"></span></a>
+      <!--<a href="#" class="post-list-item-control list-item-bookmark"><span class="glyphicon glyphicon-star"></span></a>!-->
+      {{#if is_owner}}
+         <a href="#" class="post-list-item-control list-item-edit"><span class="glyphicon glyphicon-pencil"></span></a>
+         <a href="#" class="post-list-item-control list-item-delete"><span class="fui-trash"></span></a>
+      {{/if}}
+   </div>
+   <div class="post-description">
+      <div class="item-name"><a href="/posts/{{id}}">{{name}}</a></div>
+      <div class='item-price'>{{showPrice price}}</div>
+   </div>
+   {{/if_eq}}
+</div>
+</div>

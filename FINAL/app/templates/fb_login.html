@@ -1,0 +1,56 @@
+{% set page_title = 'FB APP Login' %}
+
+{% block head %}
+<div id="fb-root"></div>
+   <script type="text/javascript">
+      'use strict';
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk')); 
+   </script>
+</div>
+{% endblock %}
+
+{% block js_btm %}
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   <script type="text/javascript">
+      'use strict';
+      var fb_appID = '687429857979311';
+      window.fbAsyncInit = function() {
+         FB.init({
+            appId      : fb_appID,
+            xfbml      : true,
+            version    : 'v2.0'
+         });
+         
+         FB.getLoginStatus(function(response) {
+            if(response.status === 'connected') {
+               var request = $.ajax({
+                  url: "/api/auth/fb_app_login",
+                  type: "POST",
+                  data: {'uid': response.authResponse.userID}
+               }).done(function(msg){
+                  $.ajax({
+                     url: '/api/account/verify_auth', 
+                     type:'GET'
+                  }).done(function(data){
+                     console.log(data);
+                     location.reload();
+                  });
+                  console.log(msg);
+               }).fail(function(msg){
+                  console.log('Failed');
+               });
+            }else{
+            //Should never be able to reach here with facebook app
+               console.log("User is not authenticated to app");
+            }
+         });   
+      };    
+   </script>
+   
+{% endblock %}

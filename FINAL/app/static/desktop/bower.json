@@ -1,0 +1,72 @@
+{
+  "name": "DoubleDibz",
+  "version": "1.5.0",
+  "authors": [
+    "Samping Chuang <sampingchuang@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.0",
+    "backbone": "1.1.2",
+    "requirejs": "2.1.14",
+    "requirejs-text": "2.0.7",
+    "underscore": "1.5.2",
+    "handlebars": "1.1.2",
+    "bootstrap": "3.2.0",
+    "jquery-timeago": "1.4.1",
+    "bootstrap-tagsinput": "0.4.2",
+    "slimscroll": "1.3.2",
+    "jquery-textcomplete": "~0.3.3",
+    "typed.js": "*",
+    "typeahead.js": "~0.10.5",
+    "backbone-forms": "0.14.0",
+    "backbone.marionette": "2.1.0",
+    "backbone-poller": "0.3.0",
+    "jquery-unveil": "~1.3.0",
+    "blueimp-load-image" : "1.13.0",
+    "blueimp-file-upload": "~9.8.0",
+    "bootstrap-tour": "0.9.3",
+    "Jcrop": "0.9.12",
+    "jQuery-linkify": "1.1.7"
+  },
+  "install": {
+    "path": "js/vendors",
+    "sources": {
+      "slimscroll": "bower_components/slimscroll/jquery.slimscroll.js",
+      "backbone-forms": [
+        "bower_components/backbone-forms/distribution.amd/backbone- .js",
+        "bower_components/backbone-forms/distribution.amd/templates/bootstrap3.js"
+      ],
+      "bootstrap": "bower_components/bootstrap/dist/js/**",
+      "blueimp-file-upload": [
+         "bower_components/blueimp-file-upload/js/jquery.fileupload.js",
+         "bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js",
+         "bower_components/blueimp-file-upload/js/jquery.iframe-transport.js",
+         "bower_components/blueimp-file-upload/css/jquery.fileupload.css"
+      ],
+      "blueimp-load-image": "bower_components/blueimp-load-image/js/*",
+      "flat-ui": "bower_components/flat-ui/dist/js/**",
+      "typeahead.js": [
+         "bower_components/typeahead.js/dist/bloodhound.js",
+         "bower_components/typeahead.js/dist/typeahead.jquery.js"
+      ],
+      "Jcrop": "bower_components/Jcrop/js/jquery.Jcrop.js",
+      "backbone.marionette": "bower_components/backbone.marionette/lib/backbone.marionette.js",
+      "jQuery-linkify": "bower_components/jQuery-linkify/dist/jquery.linkify.min.js"
+    },
+    "ignore": [
+      "blueimp-tmpl", 
+      "backbone.babysitter", 
+      "backbone.wreqr"
+   ]
+  },
+  "resolutions": {
+    "jquery": "~2.1.1"
+  }
+}

@@ -1,0 +1,121 @@
+html {
+}
+
+
+body{
+   background-color: @background-color;
+}
+
+#app-content{
+   
+}
+
+#header-region{
+   padding-top: 78px;
+}
+
+#always-alert-region .alert{
+   margin: 0;
+   margin-bottom:10px;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+// general loading sign
+.region-loader{
+   position: relative;
+   margin: 0 auto;
+   margin-top: 50px;
+   margin-bottom: 10px;
+   display: block;
+   width: 32px;
+   height:32px;  
+}
+
+/*
+ * Account Page - Emails
+ */
+
+#email-list-wrapper tr{
+   color: #666666;
+}
+
+#email-list-wrapper .email-labels .label{
+   margin-right: 4px;
+}
+
+
+/**
+ * Progress bars with centered text
+ */
+
+.progress {
+   position: relative;
+}
+
+.progress span {
+   position: absolute;
+   display: block;
+   width: 100%;
+   color: black;
+}
+
+textarea{
+   resize: none;
+}
+
+
+/*
+ * About Page
+ */
+
+#about-container{
+   font-family: "Open Sans","lucida grande","Segoe UI",arial,verdana,"lucida sans unicode",tahoma,sans-serif;
+}
+
+#about-container .description{
+   padding-top: 10px;
+   color: #748796;
+   line-height: 1.875em;
+   font-size: 16px;
+}
+
+#report-btn {
+   position: fixed;
+   text-align: center;
+   bottom: 0;
+   right: 160px;
+   padding: 4px 6px;
+   background-color: @header-bg;
+   width: 100px;
+   z-index: 1000;
+   font-size: 15px;
+   a {
+      color: white;
+   }
+   a:hover {
+      color: @link-hover-color;
+   }
+}
+
+/*Overwrite modal style */
+body.modal-open{
+  // padding-right: 0 !important;
+   width:100%
+}
+
+.modal-dialog{
+   margin: 30px auto;
+}
+
+.modal-backdrop.in{
+   opacity: 0.8;
+}
+.modal-dialog .modal-flash{
+   margin: 10px 10px 0 10px;
+   .alert{
+      margin-bottom: 0px;
+   }
+}

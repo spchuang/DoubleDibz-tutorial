@@ -1,0 +1,79 @@
+/*
+ * Inline other css files
+ */
+
+// Special bootstrap built
+// contianer-large-desktop = 1300px + ..
+// media lg break point = 1340px
+
+//@import url('vendors/bootstrap-3.2.0/bootstrap.less');
+@import url('flat-ui-2.2.0/flat-ui.less');
+
+
+/*Vendor */
+@import url('vendors/bootstrap-tagsinput.css');
+@import url('vendors/bootstrap-tour.css');
+@import url('vendors/sticky-footer.css');
+@import url('vendors/typed.css');
+
+/*Our own*/
+@import 'modules/general.less';
+@import 'modules/auth.less';
+@import 'modules/home-page.less';
+@import 'modules/messages.less';
+@import 'modules/post-item.less';
+@import 'modules/post-list.less';
+@import 'modules/post-create.less';
+@import 'modules/header.less';
+@import 'modules/account.less';
+@import 'modules/fbsync.less';
+@import 'modules/post-modal.less';
+@import 'modules/buy-request-list.less';
+@import 'modules/templates.less';
+@nav-extend-search-width:  380px;
+@red-link-color: #D93240;
+@red-link-hover-color: #F35B64;
+@background-color: #F9F9F9;
+
+/* Overwrite the font size */
+p{
+   font-size: 14px;
+}
+h1,h2,h3,h4,h5,h6{
+    text-transform: none !important;
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
+   color: inherit !important;
+}
+
+.no-transition {
+  -webkit-transition: height 0;
+  -moz-transition: height 0;
+  -ms-transition: height 0;
+  -o-transition: height 0;
+  transition: height 0;
+}
+
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+}
+
+.focus .form-control{
+   border-color: @link-hover-color;
+   outline:0;
+   box-shadow: none;
+}
+.has-error .focus .input-group-addon{
+   background: inherit;
+   color: @brand-danger;
+   border-color: @brand-danger;
+}
+
+/* Rewrite bootsrap tour css */
+.popover[class*="tour-"] {
+  font-size: 14px;
+  line-height: 1.428;
+  color: #333;
+}

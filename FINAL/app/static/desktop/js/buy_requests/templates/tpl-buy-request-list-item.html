@@ -1,0 +1,40 @@
+<div class='row '>
+   <div class='col-xs-12 col-md-9'>
+      <div class='buy-request-description'>
+         <p><b>{{name}}</b><br>{{description}}</p>
+      </div>
+      <div class='hashtags-region'></div>
+      <div class='timeago-region'></div>
+   </div>
+   
+   {{#if_eq src 'fb'}}
+      <div class='col-xs-12 col-md-3 buy-request-action'>
+         <a href="https://www.facebook.com/{{feed_id}}" data-bypass target="_blank">
+            <span class="fui-facebook"></span> View on Facebook
+         </a>
+      </div>
+      
+   {{else}}
+      <div class='col-xs-12 col-md-3 buy-request-action'>
+         {{#if is_owner}}
+            <a class="dropdown-toggle buy-request-edit" data-toggle="dropdown" href="#">
+               <span class="glyphicon glyphicon-pencil"></span> Edit post<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu no-transition dropdown-action">
+               <li><a href="/buy_requests/{{id}}/edit" id="edit-btn">Edit</a></li>
+               <li><a href="#" id="toggle-status-btn"></a></li>
+               <li><a href="#" id="delete-btn">Delete</a></li>
+            </ul>
+            
+        {{else}}
+            <a href="#" class='contact-owner'>
+               <span class="fui-mail"></span> Contact
+            </a>
+         {{/if}}
+      </div>
+     
+      
+   
+   {{/if_eq}}
+</div>
+<hr>

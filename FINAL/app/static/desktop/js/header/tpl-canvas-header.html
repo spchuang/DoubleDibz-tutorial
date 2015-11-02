@@ -1,0 +1,59 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <!-- Navbar content -->
+   <div class="container">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+         </button>
+         <a id="home-link" class="navbar-brand logo" href="/">
+            <img src="/static/img/logo_text_white.png">
+            <span class="label label-primary logo-sign">@ucla</span>
+         </a>
+      </div>
+      <div class="collapse navbar-collapse">
+      
+         <ul class="nav navbar-nav navbar-right">
+            <li id='nav-inbox'>   
+               <a id='inbox-link'  class="dropdown-toggle"  data-toggle="dropdown"  href="#">
+                  <span class="glyphicon glyphicon-envelope"></span>
+                  <span class="unread-bubble navbar-new hidden"></span>
+               </a>
+                     
+               <span class="dropdown-arrow dropdown-arrow-inverse"></span>
+               <ul class="dropdown-menu dropdown-inverse dropdown-inbox"></ul>
+            </li>
+            
+            <li>
+               <a id='noti-link' class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                  <span class="glyphicon glyphicon-globe"></span>
+                  <span class="unread-bubble navbar-new hidden"></span>
+               </a>
+               
+               <span class="dropdown-arrow dropdown-arrow-inverse"></span>
+               <ul class="dropdown-menu dropdown-inverse dropdown-notification"></ul>
+                  
+            </li>
+            
+            
+            <li>
+               <a id='header-profile' class="dropdown-toggle" data-toggle="dropdown" href='#'>
+                  <div class="pull-left header-profile-wrap">
+                     <img class='img-rounded header-profile-picture' src="{{picture_thumb}}" alt="Profile Picture" />
+
+                     <span class="header-profile-name">{{first_name}}</span>
+                  </div>
+               </a>
+                  
+               <span class="dropdown-arrow dropdown-arrow-inverse"></span>
+               <ul class="dropdown-menu">
+                     <li><a id='posts-link' href='/u/{{user_name}}'>My Posts</a></li>
+                     <li><a id="bookmarks-link" href='/bookmarks'>Bookmarks</a></li>
+                   	<li><a id='settings-link' href="/settings/account">Settings</a></li>
+               </ul>
+            </li>
+         </ul>
+         
+      </div><!--/.nav-collapse -->
+      
+   </div>
+</div>

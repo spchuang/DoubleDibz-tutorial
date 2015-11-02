@@ -1,0 +1,18 @@
+{
+  "name": "backbone-forms",
+  "description": "A flexible, customisable form framework for Backbone.JS applications.",
+  "author": {
+    "name": "Charles Davison"
+  },
+  "version": "0.14.0",
+  "dependencies": {
+    "backbone": ">=1.0.0"
+  },
+  "devDependencies": {
+    "buildify": "latest",
+    "underscore": "latest",
+    "uglify-js": "latest"
+  },
+  "main": "distribution.amd/backbone-forms.js",
+  "browser": "distribution/backbone-forms.js"
+}

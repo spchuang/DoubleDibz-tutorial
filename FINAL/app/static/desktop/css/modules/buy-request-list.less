@@ -1,0 +1,53 @@
+.request-list-wrapper{
+   .row{
+      font-size: 13px;
+      @media (min-width: @screen-md-min) {
+         margin: 5px 15px;
+      }
+      @media (min-width: @screen-xs-min) {
+         margin: 5px 0px;
+      }
+      .buy-request-action{
+         
+         margin-bottom: 1px;
+         >a{
+            line-height: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            color:#929292;
+         }
+         &.open >a, >a:hover{
+            color: @link-hover-color;
+         }
+      }
+      .buy-request-description{
+         p{
+            font-size: 16px;
+            line-height: 20px;
+         }
+         
+      }
+      .timeago{
+         cursor: pointer;
+         line-height: 20px;
+         color:#929292;
+      }
+      .hashtags-region{
+         
+      }
+      /*.buy-request-edit{
+         text-transform: uppercase;
+         color: #929292;
+         border: 1px solid #929292;
+         padding: 5px;
+         border-radius: 6px;
+         &:hover{
+            border-color:  @link-hover-color;
+         }
+      }*/
+      
+      hr{
+         margin: 10px 0;
+      }
+   }   
+}

@@ -1,0 +1,139 @@
+{% extends "layouts/header.html" %}
+{% set page_title = 'DoubleDibz' %}
+
+{% block meta %}
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="description" content="Sell your stuff to other UCLA students!" />
+<meta name="keywords" content="buying, selling, ucla">
+
+<!--fb meta!-->
+<meta property="og:title" content="DoubleDibz"/>
+<meta property="og:description" content="Sell your stuff to other UCLA students!"/>
+<meta property="og:url" content="http://www.doubledibz.com"/>
+<meta property="og:site_name" content="DoubleDibz"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="http://doubledibz.com/static/img/logo_text.jpg"/>
+<meta property="og:image" content="http://doubledibz.com/static/img/logo_symbol.jpg"/>
+<meta property="og:image" content="http://doubledibz.com/static/advertising_img/general.jpg"/>
+
+<!--google+ meta!-->
+<meta itemprop="name" content="DoubleDibz">
+<meta itemprop="description" content="Sell your stuff to other UCLA students!">
+<meta itemprop="image" content="http://doubledibz.com/static/img/logo_text.jpg">
+<meta itemprop="image" content="http://doubledibz.com/static/img/logo_symbol.jpg">
+<meta itemprop="image" content="http://doubledibz.com/static/advertising_img/general.jpg"/>
+
+<!--twitter!-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="http://www.doubledibz.com">
+<meta name="twitter:title" content="DoubleDibz">
+<meta name="twitter:description" content="Sell your stuff to other UCLA students!">
+<meta name="twitter:image" content="http://doubledibz.com/static/img/logo_text.jpg">
+<meta name="twitter:image" content="http://doubledibz.com/static/img/logo_symbol.jpg">
+<meta name="twitter:image" content="http://doubledibz.com/static/advertising_img/general.jpg"/>
+
+{% endblock %}
+
+{% set version = '1.9.9' %}
+
+{% block css_style %}
+   <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900" media="screen" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="{{ url_for('static', filename='desktop/dist/css/bootstrap-3.2.0/bootstrap.min.css') }}">
+   <!--<link rel="stylesheet" href="{{ url_for('static', filename='desktop/dist/css/bootstrap-3.3.0/bootstrap.min.css') }}">!-->
+   {% if config['PROD']%}
+      <link rel="stylesheet" href="{{ url_for('static', filename='desktop/dist/css/main.min.css') }}?bust={{version}}">
+   {% else %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='desktop/css/main.css') }}?bust={{version}}">
+   {% endif %}
+{% endblock %}
+
+{% block main_body %}
+
+<div id="app-content">
+
+   <div id="header-region"></div>
+
+   <div class="container">
+      <div class="row">
+         <div class="content-wrap col-xs-12">
+            <div id="always-alert-region"></div>
+            <div id="alert-region"></div>
+            <div id="main-region"></div>
+         </div>
+      </div>
+
+   </div>
+   <div id='footer-region'></div>
+
+</div>
+   </div>
+
+{% endblock %}
+{{data}}
+{% block js_btm %}
+   <script id='bootstrap' type='text/javascript'>
+      var CATEGORIES = {{d['categories'] | json | safe }};
+   </script>
+
+
+   <script id='authenticated_user' type='text/javascript'>
+      {% if d['authenticated'] %}
+         var AUTHENTICATED_USER = {{d['user'] | json | safe }};
+      {% else %}
+         var AUTHENTICATED_USER = null;
+      {% endif %}
+
+      {% if d['ucla_verified'] %}
+         var UCLA_TEMP = false;
+      {% else %}
+         var UCLA_TEMP = true;
+      {% endif %}
+
+   </script>
+
+
+   <script type="text/javascript">
+
+      {% if is_canvas %}
+         var is_canvas = true;
+      {% else %}
+         var is_canvas = false;
+      {% endif %}
+
+
+   </script>
+
+   {% if config['PROD']%}
+
+
+      <script type="text/javascript">
+         'use strict';
+         var console = {};
+         console.log = function(){};
+         window.console = console;
+
+         var require = {
+            baseUrl: "/static/desktop/dist/js",
+            waitSeconds: 15,
+            urlArgs : "bust={{version}}",
+            shim: {
+               'main': { deps: ["infrastructure"] },
+               'facebook' : { exports: 'FB' }
+            },
+            deps: ['main']
+         };
+
+      </script>
+      <script src="/static/desktop/dist/js/vendors/requirejs/require.js"></script>
+
+   {% else %}
+      <script src="/static/desktop/js/vendors/requirejs/require.js"></script>
+      <script type="text/javascript">
+         'use strict';
+         require(['/static/desktop/js/config.js'], function () {
+            require(['/static/desktop/js/main.js']);
+         });
+      </script>
+   {% endif %}
+
+{% endblock %}

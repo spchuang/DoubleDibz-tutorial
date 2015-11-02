@@ -1,0 +1,54 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <!-- Navbar content -->
+   <div class="container">
+
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+         </button>
+         <a id="home-link" class="navbar-brand logo" href="/">
+            <img src="/static/img/logo_text_white.png">
+            <span class="label label-primary logo-sign">@ucla</span>
+         </a>
+      </div>
+      <div class="collapse navbar-collapse">
+
+         <ul class="nav navbar-nav">
+
+            <li class="dropdown" id='nav-categories'>
+               <a id="category-list-icon" href="#" class="dropdown-toggle" data-toggle="dropdown">Categories</a>
+               
+               <span class="dropdown-arrow "></span>
+               <ul class="dropdown-menu dropdown-categories clearfix">
+                  <li><a class="category-item" data-category="all" href="#">Everything</a></li>
+               </ul>
+            </li>
+            
+            <li>
+               <a id="nav-search"   href="#"><span class="glyphicon glyphicon-search"></span></a>
+               <form id="nav-search-form" class="navbar-form navbar-left hide" action="#" role="search">
+                  <div class="form-group">
+                     <div class="input-group">
+                        <input class="form-control no-transition" id="search-box" type="search" placeholder="">
+                        <span class="input-group-btn">
+                           <button id='submit-btn' type="submit" class="btn"><span class="fui-search"></span></button>
+                        </span>            
+                     </div>
+                  </div>               
+               </form>
+            
+            </li>
+         </ul>
+         
+
+       
+         <ul id='navbar-right' class="nav navbar-nav navbar-right">
+            <li><a id="signup-link"  href="/signup">Signup</a></li>
+            <li><a id="login-link"  href="/login">Login</a></li>
+         </ul>
+       
+   
+      </div><!--/.nav-collapse -->
+   
+   </div>
+</div>

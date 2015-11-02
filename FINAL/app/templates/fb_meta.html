@@ -1,0 +1,9 @@
+
+<meta property="og:title" content="{{data.name}}"/>
+<meta property="og:description" content="For ${{data.price}} OBO. {{data.description}}"/>
+<meta property="og:href" content="http://www.DoubleDibz.com/posts/{{data.id}}"/>
+<meta property="og:site_name" content="DoubleDibz"/>
+<meta property="og:type" content="website"/>
+{% for image in data.images %}
+   <meta property="og:image" content="{{image.link}}"/>
+{% endfor %}

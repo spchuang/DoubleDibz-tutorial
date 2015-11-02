@@ -1,0 +1,30 @@
+{
+  "name": "jQuery-linkify",
+  "title": "Linkify",
+  "description": "Find URLs in plain text and return HTML for discovered links.",
+  "author": "SoapBox Innovations, Inc.",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/HitSend/jQuery-linkify.git"
+  },
+  "homepage": "https://github.com/HitSend/jQuery-linkify/",
+  "version": "1.1.7",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-cli": "0.1.x",
+    "grunt-contrib-jshint": "0.x",
+    "grunt-contrib-concat": "0.x",
+    "grunt-contrib-uglify": "0.x",
+    "grunt-contrib-clean": "0.x",
+    "grunt-contrib-connect": "0.x",
+    "grunt-contrib-copy": "0.x",
+    "grunt-wrap": "0.x",
+    "grunt-gh-pages": "0.x",
+    "grunt-bumper": "1.0.x",
+    "grunt-contrib-qunit": "0.5.x"
+  },
+  "scripts": {
+    "test": "grunt test --verbose"
+  }
+}

@@ -1,0 +1,9 @@
+insert into hashtag values(7, 'sports');
+insert into hashtag values(8, 'hair-and-beauty');
+insert into hashtag values(9, 'appliances');
+insert into hashtag values(10, 'tickets');
+insert into hashtag values(11, 'shoes');
+insert into hashtag values(12, 'accessories');
+insert into hashtag values(13, 'phones-and-accessories');
+insert into hashtag values(14, 'cars');
+insert into hashtag values(15, 'music');

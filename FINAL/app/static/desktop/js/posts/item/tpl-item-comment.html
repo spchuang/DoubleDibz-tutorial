@@ -1,0 +1,21 @@
+
+<div class="comment-img">
+   <img src="{{user.picture_thumb}}">
+</div>
+<div id="comment-{{id}}" class="comment-text">
+   {{#if is_owner}}
+      <a class="dropdown-toggle edit-comment-btn" data-toggle="dropdown" href="#">
+         <span class="glyphicon glyphicon-pencil"></span>
+      </a>
+      <ul class="dropdown-menu no-transition dropdown-comments-edit">
+         <li><a id='edit-{{id}}' class='edit' href="#">Edit</a></li>
+         <li><a class='delete' href="#">Delete</a></li>
+      </ul>
+   {{/if}}
+   <p ><a href="/u/{{user.user_name}}" class='comment-username'>{{user.user_name}}</a> <span class="timeago date sub-text" title="{{created_at}}"></span></p>
+   <p class="comment-content">{{comment}}</p> 
+   
+</div>
+
+<div id="edit-form-{{id}}" class="edit-form"></div>
+

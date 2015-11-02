@@ -1,0 +1,23 @@
+<a class='dropdown-list-item' href='#'>
+   <span class='list-item-side pull-left'>
+      <img class="img-rounded" src="{{image.thumbnail}}">
+   </span>
+   <span class="list-item-main">
+   
+      <div class='item-name'>
+         {{#if deleted}} 
+            <span style="text-decoration: line-through;">{{post_name}}</span>
+         {{else}}
+            {{post_name}}
+         {{/if}}
+      </div>
+
+      <span class='item-time-wrap'>
+         {{#if has_unread}}
+            <small>({{unread_count}} unread)</small>
+         {{/if}}
+         <small><span class='item-time'></span></small>
+      </span>
+   </span>
+</a>
+   

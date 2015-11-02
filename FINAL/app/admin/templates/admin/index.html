@@ -1,0 +1,129 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+{{ super() }}
+<div class="container">
+   <div class="hero-unit">
+      <!-- Main component for a primary marketing message or call to action -->
+      <h3>
+        DoubleDibz. Internal Admin  
+      </h3>
+      <h5>Dashboard</h5>
+      <div class='new-user-chart'></div>
+      
+      <h5>Shortcuts</h5>
+      <a href="https://www.google.com/analytics/web/?hl=en#report/visitors-overview/a54129112w86976447p90259895/%3Foverview-graphOptions.selected%3Danalytics.nthDay/" target="_blank">Google Analytics</a>
+      <br>
+      <a href="https://www.facebook.com/doubledibz" target="_blank">DoubleDibz Facebook Page</a>
+      <br>
+      <a href="https://www.facebook.com/ads/manage/home/?account_id=28199768" target="_blank">DD FB ads</a>
+      <br>
+      <a href="http://fbsync.internal.palxchange.com/admin/" target="_blank">FBSync link</a>
+   </div>
+</div> <!-- /container -->
+{% endblock body %}
+
+{% block tail %}
+   <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+   <script src="http://code.highcharts.com/modules/exporting.js" type="text/javascript"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js" type="text/javascript"></script>
+   <script type="text/javascript">
+   'strict'
+   
+      $( document ).ready(function() {
+      
+         drawDailyUserChart();
+      });
+
+      var getDailyUser = function(data){
+         // Group data by date
+         var tmpHash = _.groupBy(data, function(row){
+                     var date = new Date(row);
+                      date.setHours(0,0,0,0);
+                      return date.getTime();
+                  });
+                 
+            
+         // get the minimum and maximum date
+         var keys = _.keys(tmpHash);
+         
+         var min = new Date(parseInt(_.min(keys)));
+         var max = new Date(parseInt(_.max(keys)));
+         
+         // fill in missing date with empty array (0 count)
+         while(min.getTime() < max.getTime()) {
+            min.setDate(min.getDate() + 1);
+            if(!_.has(tmpHash, min.getTime())) {
+               tmpHash[min.getTime()] = [];
+            }
+         }
+         
+         return _.chain(tmpHash)
+                  .map(function(dateArray ,date){
+                     return {x: date, y: dateArray.length};
+                  })
+                  .sortBy(function(obj){
+                     return obj.x;
+                  })
+                  .value();
+         
+      }
+      
+      // pulls data and draws daily user charts
+      var drawDailyUserChart = function (){
+         var userAPI = '/api/admin/user';
+         
+         $.ajax(userAPI).done(function(result){
+            
+            var usersByDay = getDailyUser(result.data);
+            
+            console.log(usersByDay);
+            
+            // draw the graph
+            $(".new-user-chart").highcharts({
+               chart: {
+                  type: 'spline',
+                  zoomType: 'x'
+               },
+               exporting: {
+                  enabled: true
+               },
+               title : {
+                  text: "Daily new user"   
+               },
+               xAxis: {
+                  type: 'datetime',
+                  minRange: 7 * 24 * 3600000 // fourteen days
+               },
+               legend: {
+                  enabled: false
+               },
+               yAxis: {
+                 title : {
+                    text: 'numbers of signup'
+                 },
+                 min: 0,
+                 minRange: 1
+               },
+               tooltip: {
+                  formatter: function() {
+                     
+                     var date = new Date(parseInt(this.x));
+                     return Highcharts.dateFormat('%e. %b', date) + '<br/>' + this.y;
+                  }
+               },
+               navigator: {
+                  enabled: true   
+               },
+               series : [{
+                  name: 'New user',
+                  data: usersByDay,
+                  pointStart: Date.UTC(2014, 11, 19)
+               }]
+               
+            });
+         });
+         
+      }
+
+   </script>
+{% endblock tail %}

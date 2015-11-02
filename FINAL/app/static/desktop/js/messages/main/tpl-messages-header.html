@@ -1,0 +1,56 @@
+{{#if exists}}
+   {{#if is_selling}}
+      {{#if isOwner}}
+         <img class='img-circle' src="{{image.thumbnail}}" />
+         <h4 class='post-name'>Name: <a class='post-link' href='/posts/{{id}}'>
+            {{#if deleted}} 
+               <span style="text-decoration: line-through;">{{post_name}}</span>
+            {{else}}
+               {{post_name}}
+            {{/if}}
+         </a></h4>
+         
+         <a href="/posts/{{id}}/edit" class="edit-post-link btn-sm btn-primary"><span class="glyphicon glyphicon-pencil"></span> Edit your post</a>
+         
+      {{else}}
+         <img class='img-circle' src="{{image.thumbnail}}" />
+         <h4 class='post-name'>Name: <a class='post-link' href='/posts/{{id}}'>
+            {{#if deleted}} 
+               <span style="text-decoration: line-through;">{{post_name}}</span>
+            {{else}}
+               {{post_name}}
+            {{/if}}
+         </a></h4>
+         <h5>Selling by: <span class='owner-name-region'></span></h5>
+      
+      {{/if}}
+   {{else}}
+      {{#if isOwner}}
+         <img class='img-circle' src="{{image.thumbnail}}" />
+         <h4 class='post-name'>Name: 
+            {{#if deleted}} 
+               <span style="text-decoration: line-through;">{{post_name}}</span>
+            {{else}}
+               {{post_name}}
+            {{/if}}
+         </h4>
+         
+         <a href="/buy_requests/{{id}}/edit" class="edit-post-link btn-sm btn-primary"><span class="glyphicon glyphicon-pencil"></span> Edit your post</a>
+         
+      {{else}}
+         <img class='img-circle' src="{{image.thumbnail}}" />
+         <h4 class='post-name'>Name: 
+            {{#if deleted}} 
+               <span style="text-decoration: line-through;">{{post_name}}</span>
+            {{else}}
+               {{post_name}}
+            {{/if}}
+         </h4>
+         <h5>Request by: <span class='owner-name-region'></span></h5>
+      
+      {{/if}}
+   {{/if}}
+{{else}}
+   
+
+{{/if}}
