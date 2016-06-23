@@ -1,3 +1,7 @@
+## DoubleDibz is open sourced!
+[Read a simple intro to the code](http://blog.sampingchuang.com/source-code-for-doubledibz/). The code is somewhat complicated but It should give you a lot of good examples for your next Flask or Backbone application.
+
+
 
 Requirements:
 * pip
